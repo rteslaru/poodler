@@ -1,0 +1,37 @@
+<head>
+    <title>disconnectr</title>
+</head>
+
+<body>{{> mainTemplate}}</body>
+
+<template name="mainTemplate">
+    <div class="container-fluid">
+    <br>
+    <br>
+    <br>
+    <div class="row-fluid">
+        <div class="span2">
+            <a href="#" class="btn-add btn btn-primary btn-large">insert number</a>
+        </div>
+    </div>
+        {{#each myVariables}}
+        {{> detailTemplate}}
+        {{/each}}
+
+        <div class="row-fluid">
+            <div class="span2">
+                <a href="#" class="btn-disconnect btn btn-large {{isDanger}}">{{dangerText}}</a>
+            </div>
+        </div>
+    </div>
+</template>
+
+<template name="detailTemplate">
+    <div class="row-fluid">
+        <div class="span7">
+            <a href="#" class="btn-decrease btn btn-warning">decrease</a>
+            {{numar}}
+            <a href="#" class="btn-increase btn btn-success">increase</a>
+        </div>
+    </div>
+</template>
