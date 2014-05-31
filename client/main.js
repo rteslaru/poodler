@@ -29,9 +29,12 @@ Template.detailTemplate.events({
     'click .btn-decrease': function(e) {
         e.preventDefault();
         Clienti.update({_id: this._id}, {$inc: {numar: -1}});
+        $(e.currentTarget).transition('tada');
     },
     'click .btn-increase': function(e) {
         e.preventDefault();
         Clienti.update({_id: this._id}, {$inc: {numar: 1}});
+        $(e.currentTarget).transition('bounce');
+
     }
 });

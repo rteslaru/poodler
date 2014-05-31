@@ -4,30 +4,36 @@
 
 <body>
 
-<div class="ui grid">
-    <div class="four wide column">
+    <div class="ui center aligned grid">
         {{> mainTemplate}}
     </div>
-</div>
 
 
 </body>
 
 <template name="mainTemplate">
+    <div class="four column row">
+        <div class="four column">
             <div class="btn-insert ui button">insert</div>
-            <div class="ui horizontal divider">BEGIN</div>
-        {{#each myVariables}}
-        {{> detailTemplate}}
-        {{/each}}
-<div class="ui horizontal divider">END</div>
-        <div class="btn-disconnect secondary ui button">{{dangerText}}</div>
+            <div class="ui horizontal divider">BEGIN</div>    
+        </div>
+    </div>
+
+    {{#each myVariables}}
+    {{> detailTemplate}}
+    {{/each}}
+    <div class="ui horizontal divider">END</div>
+    <div class="btn-disconnect secondary ui button">{{dangerText}}</div>
 
 </template>
 
 <template name="detailTemplate">
-<div class="four column row">
-        <div class="btn-decrease red ui icon button"><i class="minus icon"></i></div>
-        {{numar}}
-        <div class="btn-increase green ui icon button"><i class="plus icon"></i></div>    
-</div>
+
+<div class="four column middle aligned row">
+        <div class="four column">
+            <div class="btn-decrease red ui icon button"><i class="minus icon"></i></div>
+            {{numar}}
+            <div class="btn-increase green ui icon button"><i class="plus icon"></i></div>    
+        </div>
+    </div>
 </template>
