@@ -2,36 +2,32 @@
     <title>disconnectr</title>
 </head>
 
-<body>{{> mainTemplate}}</body>
+<body>
+
+<div class="ui grid">
+    <div class="four wide column">
+        {{> mainTemplate}}
+    </div>
+</div>
+
+
+</body>
 
 <template name="mainTemplate">
-    <div class="container-fluid">
-    <br>
-    <br>
-    <br>
-    <div class="row-fluid">
-        <div class="span2">
-            <a href="#" class="btn-add btn btn-primary btn-large">insert number</a>
-        </div>
-    </div>
+            <div class="btn-insert ui button">insert</div>
+            <div class="ui horizontal divider">BEGIN</div>
         {{#each myVariables}}
         {{> detailTemplate}}
         {{/each}}
+<div class="ui horizontal divider">END</div>
+        <div class="btn-disconnect secondary ui button">{{dangerText}}</div>
 
-        <div class="row-fluid">
-            <div class="span2">
-                <a href="#" class="btn-disconnect btn btn-large {{isDanger}}">{{dangerText}}</a>
-            </div>
-        </div>
-    </div>
 </template>
 
 <template name="detailTemplate">
-    <div class="row-fluid">
-        <div class="span7">
-            <a href="#" class="btn-decrease btn btn-warning">decrease</a>
-            {{numar}}
-            <a href="#" class="btn-increase btn btn-success">increase</a>
-        </div>
-    </div>
+<div class="four column row">
+        <div class="btn-decrease red ui icon button"><i class="minus icon"></i></div>
+        {{numar}}
+        <div class="btn-increase green ui icon button"><i class="plus icon"></i></div>    
+</div>
 </template>
