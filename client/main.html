@@ -4,40 +4,38 @@
 
 <body>
 
-<div class="ui large vertical inverted labeled icon sidebar menu">
-    <div class="item">
-        <b>Wow</b>
-        <div class="menu">
-            <div class="item">asdfdsa</div>
-            <div class="item">asdfdsa</div>
-            <div class="item">asdfdsa</div>
-            <div class="item">asdfdsa</div>
+    <div class="ui large vertical inverted labeled icon sidebar menu">
+        <div class="item">
+            <b>Wow</b>
+            <div class="menu">
+                <div class="item">asdfdsa</div>
+                <div class="item">asdfdsa</div>
+            </div>
         </div>
     </div>
-</div>
 
-<div class="ui fixed transparent inverted main menu">
+    <div class="ui fixed transparent inverted main menu">
 
-    <div class="container">
-        <div class="item">adsfadsfasd</div>
+        <div class="item">
+            <div class="ui right attached black button">
+                <i class="icon list layout"></i>
+            </div>
+        </div>
+        <div class="item"> Stuff</div>
+        <div class="item right"> More Stuff </div>
     </div>
-</div>
 
-<div class="ui blue huge launch right attached button">
-    <i class="icon list layout"></i>
-    <span class="text">MENU</span>
-</div>
-
-    <div class="ui center aligned grid">
-        {{> mainTemplate}}
+    <div class="ui page stackable grid">
+        {{> mainTemplate}}    
     </div>
 
 
 </body>
 
 <template name="mainTemplate">
-    <div class="four column row">
-        <div class="four column">
+<div class="row"></div>
+    <div class="row">
+        <div class="four column doubling">
             <div class="btn-add ui button">insert</div>
             <div class="ui horizontal divider">BEGIN</div>    
         </div>
@@ -46,10 +44,10 @@
     {{#each myVariables}}
     {{> detailTemplate}}
     {{/each}}
-    <div class="four column row">
-        <div class="four column">
-    <div class="ui horizontal divider">END</div>
-    <div class="btn-disconnect secondary ui button">{{dangerText}}</div>
+    <div class="row">
+        <div class="four column doubling">
+            <div class="ui horizontal divider">END</div>
+            <div class="btn-disconnect secondary ui button">{{dangerText}}</div>
         </div>
     </div>
 
@@ -57,8 +55,8 @@
 
 <template name="detailTemplate">
 
-<div class="four column middle aligned row">
-        <div class="four column">
+    <div class="row">
+        <div class="four column doubling">
             <div class="btn-decrease red ui icon button"><i class="minus icon"></i></div>
             {{numar}}
             <div class="btn-increase green ui icon button"><i class="plus icon"></i></div>    

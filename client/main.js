@@ -38,3 +38,14 @@ Template.detailTemplate.events({
 
     }
 });
+
+
+UI.body.rendered = function() {
+    $('.ui.sidebar').sidebar();
+};
+
+UI.body.events({
+    'click .button': function() {
+        $('.ui.sidebar').sidebar('toggle');
+    }
+});
