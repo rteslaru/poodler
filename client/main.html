@@ -1,5 +1,12 @@
 <head>
-    <title>disconnectr</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <title>disconnectr</title>  
+
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Open+Sans:300italic,400,300,700' rel='stylesheet' type='text/css'>
+
 </head>
 
 <body>
@@ -33,9 +40,9 @@
 </body>
 
 <template name="mainTemplate">
-<div class="row"></div>
+    <div class="row"></div>
     <div class="row">
-        <div class="four column doubling">
+        <div class="column">
             <div class="btn-add ui button">insert</div>
             <div class="ui horizontal divider">BEGIN</div>    
         </div>
@@ -45,7 +52,7 @@
     {{> detailTemplate}}
     {{/each}}
     <div class="row">
-        <div class="four column doubling">
+        <div class="column">
             <div class="ui horizontal divider">END</div>
             <div class="btn-disconnect secondary ui button">{{dangerText}}</div>
         </div>
@@ -56,7 +63,7 @@
 <template name="detailTemplate">
 
     <div class="row">
-        <div class="four column doubling">
+        <div class="column">
             <div class="btn-decrease red ui icon button"><i class="minus icon"></i></div>
             {{numar}}
             <div class="btn-increase green ui icon button"><i class="plus icon"></i></div>    
