@@ -1,72 +1,123 @@
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-  <title>disconnectr</title>  
+<title>disconnectr</title>
 
-  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Open+Sans:300italic,400,300,700' rel='stylesheet' type='text/css'>
-
-</head>
+<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Open+Sans:300italic,400,300,700' rel='stylesheet' type='text/css'></head>
 
 <body>
+    {{>Surface template='sidebar' size="[200,undefined]" translate="[-200,0,0]"}}
+    {{#RenderController size="[undefined,undefined]" transition='slideUpSlow' translate="[0,0,0]"}}
+    
 
-    <div class="ui large vertical inverted labeled icon sidebar menu">
+    {{#HeaderFooterLayout size="[undefined,undefined]" headerSize="46" footerSize="54"}}
+
+        {{>Surface template='menu' modifier="inFront" target="header"}}
+            
+        {{>View template="mainTemplate" target='content' size="[undefined,undefined]"}}
+
+        {{>Surface template='bottomMenu' size="[undefined,undefined]" target="footer" class="blue-bg"}}
+
+    {{/HeaderFooterLayout}}
+    {{/RenderController}}
+
+</body>
+
+<template name="famousInit">
+
+    
+</template>
+
+<template name='bottomMenu'>
+    <div class="ui fluid four item inverted bottom fixed borderless menu">
+        <div class="item"> <i class="circular inverted link teal icon home"></i>
+        </div>
+        <div class="item"> <i class="circular inverted link icon calendar"></i>
+        </div>
         <div class="item">
-            <b>Wow</b>
+            <i class="circular inverted link icon bullhorn"></i>
+        </div>
+        <div class="item">
+            <i class="circular inverted link icon user"></i>
+        </div>
+    </div>
+</template>
+
+<template name="sidebar">
+    <div class="ui large vertical fluid inverted labeled icon side menu">
+        <div class="item"> <b>Wow</b>
             <div class="menu">
                 <div class="item">asdfdsa</div>
                 <div class="item">asdfdsa</div>
             </div>
         </div>
     </div>
+</template>
 
+<template name="menu">
     <div class="ui fixed transparent inverted main menu">
-
-        <div class="item">
-            <div class="ui right attached black button">
-                <i class="icon list layout"></i>
-            </div>
-        </div>
-        <div class="item"> Stuff</div>
-        <div class="item right"> More Stuff </div>
+        <a class="item sidebar-toggle">
+            <i class="large icon list icon"></i>
+        </a>
+        <div class="item">Stuff</div>
+        <div class="item right">More Stuff</div>
     </div>
-
-    <div class="ui page stackable grid">
-        {{> mainTemplate}}    
-    </div>
-
-
-</body>
+</template>
 
 <template name="mainTemplate">
-    <div class="row"></div>
-    <div class="row">
-        <div class="column">
-            <div class="btn-add ui button">insert</div>
-            <div class="ui horizontal divider">BEGIN</div>    
-        </div>
-    </div>
+    {{#Scrollview size="[undefined, undefined]" direction="X" paginated="true"}}
+        {{#Surface size="[undefined,undefined]"}}
+            <h1>Hello!</h1>
+        {{/Surface}}
+        {{#Scrollview size="[undefined, undefined]"}}
+            {{#Surface size="[undefined,50]" classes="centered,white-bg"}}
+                <div class="btn-add ui button">insert</div>
+            {{/Surface}}
 
-    {{#each myVariables}}
-    {{> detailTemplate}}
-    {{/each}}
-    <div class="row">
-        <div class="column">
-            <div class="ui horizontal divider">END</div>
-            <div class="btn-disconnect secondary ui button">{{dangerText}}</div>
-        </div>
-    </div>
-
+            {{#Surface size="[undefined,50]" classes="white-bg"}}
+                <div class="ui horizontal divider">BEGIN</div>
+            {{/Surface}}
+            
+            {{#famousEach myVariables}}
+                {{>Surface template="detailTemplate" size="[undefined,50]" classes='centered,white-bg'}}
+            {{/famousEach}}
+            
+            {{#Surface size="[undefined,75]" classes="white-bg"}}
+                <div class="ui horizontal divider">END</div>
+            {{/Surface}}
+            {{#Surface size="[undefined,50]" classes="centered,white-bg"}}
+                <div class="btn-disconnect secondary ui button">{{dangerText}}</div>
+            {{/Surface}}
+        {{/Scrollview}}
+    {{/Scrollview}}
 </template>
 
 <template name="detailTemplate">
-
-    <div class="row">
-        <div class="column">
-            <div class="btn-decrease red ui icon button"><i class="minus icon"></i></div>
-            {{numar}}
-            <div class="btn-increase green ui icon button"><i class="plus icon"></i></div>    
-        </div>
+    <div class="btn-decrease red ui icon button">
+        <i class="minus icon"></i>
     </div>
+    {{../numar}}
+    <div class="btn-increase green ui icon button">
+        <i class="plus icon"></i>
+    </div>
+</template>
+
+<template name="page2">
+    {{#Surface size="[undefined, undefined]"}}
+    <h1>Page 2</h1>
+    {{/Surface}}
+</template>
+
+<template name="page3">
+    {{#Surface size="[undefined, undefined]"}}
+    <h1>Page 3</h1>
+    {{/Surface}}
+</template>
+
+<template name="page4">
+    {{#Surface size="[undefined, undefined]"}}
+    <h1>Page 4</h1>
+    {{/Surface}}
 </template>

@@ -1,1 +1,5 @@
 .meteor
+.DS_Store
+packages
+smart.json
+smart.lock

@@ -6,10 +6,32 @@ body {
 
 body {
   font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-  background: #FFFFFF;
+  background: #333333;
   margin: 0px;
   padding: 0px;
   color: #555555;
   text-rendering: optimizeLegibility;
   min-width: 320px;
+}
+
+.ui.vertical.side.menu {
+    height: 100%;
+    border-radius: 0;
+}
+
+.centered {
+    text-align: center;
+}
+
+.white-bg {
+    background-color: #ffffff;
+}
+
+.red-bg {
+    background-color: red;
+}
+
+.ui.corner.label {
+    margin: 0 !important;
+    padding: 0 !important;
 }
