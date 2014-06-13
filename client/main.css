@@ -6,7 +6,7 @@ body {
 
 body {
   font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-  background: #333333;
+  /*background: #333333;*/
   margin: 0px;
   padding: 0px;
   color: #555555;
@@ -27,11 +27,21 @@ body {
     background-color: #ffffff;
 }
 
+.green-bg {
+  background-color: green;
+}
+
 .red-bg {
-    background-color: red;
+    /*background-color: #ffffff;*/
+    text-align: center;
+    line-height: 54px;
 }
 
 .ui.corner.label {
     margin: 0 !important;
     padding: 0 !important;
+}
+
+.align-center {
+  text-align: center;
 }

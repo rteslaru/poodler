@@ -9,7 +9,11 @@
 
 <body>
     {{>Surface template='sidebar' size="[200,undefined]" translate="[-200,0,0]"}}
-    {{#RenderController size="[undefined,undefined]" transition='slideUpSlow' translate="[0,0,0]"}}
+    {{#RenderController size="[undefined,undefined]" transition='' translate="[0,0,0]"}}
+
+    {{#Surface size="[undefined,200]" translate="[0,-200,0]"}}
+    <div class="green-bg">asdf</div>
+    {{/Surface}}
     
 
     {{#HeaderFooterLayout size="[undefined,undefined]" headerSize="46" footerSize="54"}}
@@ -18,7 +22,7 @@
             
         {{>View template="mainTemplate" target='content' size="[undefined,undefined]"}}
 
-        {{>Surface template='bottomMenu' size="[undefined,undefined]" target="footer" class="blue-bg"}}
+        {{>View template='bottomMenu' target="footer" size="[undefined,undefined]"}}
 
     {{/HeaderFooterLayout}}
     {{/RenderController}}
@@ -31,22 +35,38 @@
 </template>
 
 <template name='bottomMenu'>
-    <div class="ui fluid four item inverted bottom fixed borderless menu">
-        <div class="item"> <i class="circular inverted link teal icon home"></i>
+{{#GridLayout dimensions="[4,1]" size="[200,undefined]" origin="[0.5,0.5]" }}
+    {{>Surface template="homeBtn" size="[undefined,undefined]" class="red-bg"}}
+    {{>Surface template="calendarBtn" size="[undefined,undefined]" class="red-bg"}}
+    {{>Surface template="hornBtn" size="[undefined,undefined]" class="red-bg"}}
+    {{>Surface template="userBtn" size="[undefined,undefined]" class="red-bg"}}
+{{/GridLayout}}
+</template>
+
+<template name="homeBtn">
+    <div class="item"> <i class="link red icon home"></i>
         </div>
-        <div class="item"> <i class="circular inverted link icon calendar"></i>
+</template>
+
+<template name="calendarBtn">
+    <div class="item"> <i class="link icon calendar"></i>
         </div>
-        <div class="item">
-            <i class="circular inverted link icon bullhorn"></i>
+</template>
+
+<template name="hornBtn">
+    <div class="item">
+            <i class="link icon bullhorn"></i>
         </div>
-        <div class="item">
-            <i class="circular inverted link icon user"></i>
+</template>
+
+<template name="userBtn">
+    <div class="item">
+            <i class="link icon user"></i>
         </div>
-    </div>
 </template>
 
 <template name="sidebar">
-    <div class="ui large vertical fluid inverted labeled icon side menu">
+    <div class="ui large vertical fluid labeled icon side borderless menu">
         <div class="item"> <b>Wow</b>
             <div class="menu">
                 <div class="item">asdfdsa</div>
@@ -58,24 +78,130 @@
 
 <template name="menu">
     <div class="ui fixed transparent inverted main menu">
-        <a class="item sidebar-toggle">
+        <div class="item sidebar-toggle">
             <i class="large icon list icon"></i>
-        </a>
+        </div>
         <div class="item">Stuff</div>
         <div class="item right">More Stuff</div>
     </div>
 </template>
 
-<template name="mainTemplate">
-    {{#Scrollview size="[undefined, undefined]" direction="X" paginated="true"}}
-        {{#Surface size="[undefined,undefined]"}}
-            <h1>Hello!</h1>
-        {{/Surface}}
-        {{#Scrollview size="[undefined, undefined]"}}
-            {{#Surface size="[undefined,50]" classes="centered,white-bg"}}
-                <div class="btn-add ui button">insert</div>
-            {{/Surface}}
+<template name="feed">
+<div class="ui feed segment">
+  <h2 class="ui header">
+    Recent Activity
+  </h2>
+  <div class="event">
+    <div class="label">
+      <img src="http://placehold.it/200">
+    </div>
+    <div class="content">
+      <div class="date">
+        Just moments ago
+      </div>
+      <div class="summary">
+         <a>Sally Poodle</a> added you as a friend
+      </div>
+    </div>
+  </div>
+  <div class="event">
+    <div class="label">
+      <i class="circular pencil icon"></i>
+    </div>
+    <div class="content">
+      <div class="date">
+        3 days ago
+      </div>
+      <div class="summary">
+        You submitted a new post to the page
+      </div>
+      <div class="extra text">
+        I am a dog and I do not know how to make a post
+      </div>
+    </div>
+  </div>
+  <div class="event">
+    <div class="label">
+      <i class="circular photo icon"></i>
+    </div>
+    <div class="content">
+      <div class="date">
+        3 days ago
+      </div>
+      <div class="summary">
+        <a>Sally Poodle</a> added <a>2 new photos</a> of you
+      </div>
+      <div class="extra images">
+        <img src="http://placehold.it/400">
+        <img src="http://placehold.it/400">
+      </div>
+    </div>
+  </div>
+<div class="event">
+    <div class="label">
+      <i class="circular photo icon"></i>
+    </div>
+    <div class="content">
+      <div class="date">
+        3 days ago
+      </div>
+      <div class="summary">
+        <a>Sally Poodle</a> added <a>2 new photos</a> of you
+      </div>
+      <div class="extra images">
+        <img src="http://placehold.it/400">
+        <img src="http://placehold.it/400">
+      </div>
+    </div>
+  </div>
+<div class="event">
+    <div class="label">
+      <i class="circular photo icon"></i>
+    </div>
+    <div class="content">
+      <div class="date">
+        3 days ago
+      </div>
+      <div class="summary">
+        <a>Sally Poodle</a> added <a>2 new photos</a> of you
+      </div>
+      <div class="extra images">
+        <img src="http://placehold.it/400">
+        <img src="http://placehold.it/400">
+      </div>
+    </div>
+  </div>
+<div class="event">
+    <div class="label">
+      <i class="circular photo icon"></i>
+    </div>
+    <div class="content">
+      <div class="date">
+        3 days ago
+      </div>
+      <div class="summary">
+        <a>Sally Poodle</a> added <a>2 new photos</a> of you
+      </div>
+      <div class="extra images">
+        <img src="http://placehold.it/400">
+        <img src="http://placehold.it/400">
+      </div>
+    </div>
+  </div>
+</div>
+</template>
 
+<template name="mainTemplate">
+    {{>Scrollview template="mainScrollview" size="[undefined,undefined]" direction="X" paginated="true"}}
+</template>
+
+
+<template name="mainScrollview">
+        {{#Scrollview size="[undefined,undefined]"}}
+        {{>Surface template="feed" size="[undefined,undefined]"}}
+        {{/Scrollview}}
+        {{#Scrollview size="[undefined, undefined]"}}
+            {{>Surface template="insertBtn" size="[undefined,50]" classes="centered,white-bg"}}
             {{#Surface size="[undefined,50]" classes="white-bg"}}
                 <div class="ui horizontal divider">BEGIN</div>
             {{/Surface}}
@@ -91,7 +217,10 @@
                 <div class="btn-disconnect secondary ui button">{{dangerText}}</div>
             {{/Surface}}
         {{/Scrollview}}
-    {{/Scrollview}}
+</template>
+
+<template name="insertBtn">
+    <div class="btn-add ui button">insert</div>
 </template>
 
 <template name="detailTemplate">
