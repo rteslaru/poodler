@@ -1,1 +1,0 @@
-Clienti = new Meteor.Collection('clienti');

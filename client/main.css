@@ -4,9 +4,42 @@ body {
   height: 100%;
 }
 
+.login-bg {
+  background-image: url(http://subtlepatterns.com/patterns/congruent_pentagon.png);
+  overflow: hidden;
+  background-repeat:no-repeat;
+  background-position:center; 
+  background-size: cover;
+
+}
+
+.main-bg {
+  background-image: url(http://subtlepatterns.com/patterns/congruent_pentagon.png);
+  overflow: hidden;
+  background-repeat:no-repeat;
+  background-position:center; 
+  background-size: cover;
+
+}
+
+.bg-pic {
+  background-image:url('http://placehold.it/1000x500');
+  background-repeat:no-repeat;
+  background-position:center; 
+  background-size: cover;
+
+}
+
+
+.splash-screen {
+  background-image:url('http://placehold.it/900x1600/19376a/f6d55d&text=Splash+screen');
+  background-repeat:no-repeat;
+  background-position:center; 
+  background-size: cover;
+}
+
 body {
   font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-  /*background: #333333;*/
   margin: 0px;
   padding: 0px;
   color: #555555;
@@ -14,17 +47,58 @@ body {
   min-width: 320px;
 }
 
+.front-page-1 {
+  height: 200px;
+  width: 200px;
+  margin: 0 auto !important;
+  display: table !important;
+  background-image: url(http://indul.ccio.co/MF/FD/DB/portraitbrush.jpg);
+  overflow: hidden;
+  background-repeat:no-repeat;
+  background-position:center; 
+  background-size: cover;
+}
+
+.front-page-2 {
+  height: 200px;
+  width: 200px;
+  margin: 0 auto !important;
+  display: table !important;
+  background-image: url(http://3.bp.blogspot.com/_osrVjnPbdEM/SyN4jq9blcI/AAAAAAAARvo/i4KiTbZNPdY/s400/Cool_portraits_14.jpg);
+  overflow: hidden;
+  background-repeat:no-repeat;
+  background-position:center; 
+  background-size: cover;
+}
+
+.front-page-3 {
+  height: 200px;
+  width: 200px;
+  margin: 0 auto !important;
+  display: table !important;
+  background-image: url(http://im2.peldata.com/bl1/4783/7th.jpg);
+  overflow: hidden;
+  background-repeat:no-repeat;
+  background-position:center; 
+  background-size: cover;
+}
+
+.front-page>.header {
+  display: table-cell;
+  vertical-align: middle;
+}
+
 .ui.vertical.side.menu {
-    height: 100%;
-    border-radius: 0;
+  height: 100%;
+  border-radius: 0;
 }
 
 .centered {
-    text-align: center;
+  text-align: center;
 }
 
 .white-bg {
-    background-color: #ffffff;
+  background-color: #ffffff;
 }
 
 .green-bg {
@@ -32,14 +106,13 @@ body {
 }
 
 .red-bg {
-    /*background-color: #ffffff;*/
-    text-align: center;
-    line-height: 54px;
+  text-align: center;
+  line-height: 54px;
 }
 
 .ui.corner.label {
-    margin: 0 !important;
-    padding: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 .align-center {
