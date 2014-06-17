@@ -1,4 +1,4 @@
-var Transform = require('famous/core/Transform');
+Transform = require('famous/core/Transform');
 var Transitionable = require("famous/transitions/Transitionable");
 var SpringTransition = require("famous/transitions/SpringTransition");
 var StateModifier = require('famous/modifiers/StateModifier');
@@ -20,7 +20,7 @@ b.set(1, {
     curve: Easing.outBounce
 });
 
-var springTransition = {
+springTransition = {
     method: "spring",
     period: 200,
     dampingRatio: .5,
@@ -82,12 +82,13 @@ animateLoginButtons = function(tpl) {
 bounceRows = function() {
     $('.btn-decrease').each(function(i, val) {
         var modifier = famousCmp.dataFromElement(val).modifier;
-        modifier.setTransform(Transform.translate(0, 0, -200));
+        modifier.setOrigin([0.5, 0]);
+        modifier.setTransform(Transform.scale(0, 0, 1));
         queue.push(function() {
             modifier.setTransform(
-                Transform.translate(0, 0, 0), {
+                Transform.scale(1, 1, 1), {
                     duration: 1000,
-                    curve: Easing.outBounce
+                    curve: Easing.outExpo
                 }
             );
         });
@@ -107,7 +108,21 @@ pullDown = function(tpl, offset, zOffset) {
             }
         );
     });
+};
 
+scaleUp = function(tpl) {
+    var modifier = famousCmp.dataFromTemplate(tpl).modifier;
+    var offset = offset || 100;
+    var zOffset = zOffset || 1;
+    modifier.setTransform(Transform.scale(0, 0, 0));
+    queue.push(function() {
+        modifier.setTransform(
+            Transform.scale(1, 1, 1), {
+                duration: 1000,
+                curve: 'easeInOut'
+            }
+        );
+    });    
 };
 
 animateBottomIcons = function(menuPos) {
